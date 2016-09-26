@@ -1,0 +1,18 @@
+language: rust
+rust:
+- stable
+- beta
+- nightly
+matrix:
+  allow_failures:
+  - rust: nightly
+script:
+- make
+deploy:
+  provider: releases
+  api_key:
+    secure: FAeu2yCRbAAY15dXdq3LO7GUecxMgq8nQjA4RuF+l+IyUN38UduHLfGdP9vTKmjVpIr5sSGenQXSyRawLigTRcSb4zJczjcbstVFjIUEv9dMaJ6T1CfGZ1zw0h/zCRybt46BluOeUhHp2vc0LmPIp584Zrj8Yksd7XJJuI1JJrXbMKgTi9vY938KHcZ26GYlsbokwmjaGz6APaWMLfrufVwiHYHnIJ8I2lMWGnoxZo2xYOxaom+KzXgrIDqruJ4wc530mrjJKTngYemuRkJ6v/ebHu2Vg+qZMUDObxCTEPULP76z6TLCZrYOElwngFuu7+w0VVKjTWORFkNDTGhWwI/xXkjT+1dxM63XJpQ6LFpntiwCgc30S3Q9T5bo9VGIdQSfHBfMNEvw0HwqX7CRNRYmBPL4IOhPIihqtdamK8YfpdwAfvab1BnCzbHHs0IHPU4HBMi0ISKABV9LkGu/nZtJNLRrvHvZHDUfcpSVjuwWzrIRghzydgbcfwsUYOi+eZpVoVCnUwzkDrPfkmh41xrgHlXrItm/dnzvduPyRbMSRU0HqSuvbdocq+m+Cuj/ZgXtz39NGv+jryTe6007hZeXmVVevI+JZJYuLl3m18bCluVne8EvF5PSne+myUJDBPJe9mFmhknaoL+8Hkh9o8bUoVkVgtkws/QPJdXIUGk=
+  file: target/x86_64-unknown-linux-musl/release/ts
+  on:
+    condition: $TRAVIS_RUST_VERSION = nightly
+    repo: gdvalle/ts
