@@ -1,6 +1,6 @@
 [package]
 name = "ts"
-version = "0.0.2"
+version = "0.0.3"
 authors = [ "Greg Dallavalle <greg.dallavalle@gmail.com>" ]
 
 [profile.release]
@@ -8,4 +8,4 @@ authors = [ "Greg Dallavalle <greg.dallavalle@gmail.com>" ]
 panic = "abort"
 
 [dependencies]
-chrono = "0.2"
+chrono = "0.4"
